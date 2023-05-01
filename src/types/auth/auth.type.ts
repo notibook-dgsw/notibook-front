@@ -1,6 +1,6 @@
 export type postSignupType = {
+  login_id: string;
   name: string;
-  email: string;
   password: string;
 };
 

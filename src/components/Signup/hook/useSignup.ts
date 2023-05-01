@@ -14,16 +14,16 @@ const useSignup = () => {
   const postSignupMutaition = usePostSignupMutation();
   const navigate = useNavigate();
 
-  const submitSignup = ({ name, email, password }: postSignupType) => {
+  const submitSignup = ({ login_id, name, password }: postSignupType) => {
     postSignupMutaition.mutate(
-      { name, email, password },
+      { login_id, name, password },
       {
         onSuccess: () => {
           navigate("/signin");
         },
         onError: (error: any) => {
           if (error instanceof AxiosError) {
-            window.alert(error.response!.data.details);
+            window.alert(error.response!.data.message);
           }
         },
       }

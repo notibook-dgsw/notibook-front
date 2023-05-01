@@ -16,9 +16,9 @@ const useSignin = () => {
   const postSigninMutaition = usePostSigninMutation();
   const navigate = useNavigate();
 
-  const submitSignin = ({ email, password }: postSigninType) => {
+  const submitSignin = ({ login_id, password }: postSigninType) => {
     postSigninMutaition.mutate(
-      { email, password },
+      { login_id, password },
       {
         onSuccess: ({ token }) => {
           LocalStorage.set(ACCESS_TOKEN_KEY, token);
@@ -26,7 +26,7 @@ const useSignin = () => {
         },
         onError: (error: any) => {
           if (error instanceof AxiosError) {
-            window.alert(error.response!.data.details);
+            window.alert(error.response!.data.message);
           }
         },
       }

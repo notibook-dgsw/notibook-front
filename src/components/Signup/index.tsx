@@ -8,8 +8,8 @@ const Signup = () => {
     <S.Container>
       <S.SignupFormContainer>
         <S.Form
-          onSubmit={handleSubmit(({ name, email, password }) =>
-            submitSignup({ name, email, password })
+          onSubmit={handleSubmit(({ login_id, name, password }) =>
+            submitSignup({ login_id, name, password })
           )}
         >
           <S.Title>회원가입</S.Title>
@@ -27,11 +27,11 @@ const Signup = () => {
             ) : null}
           </S.InputContainer>
           <S.InputContainer>
-            <S.InputLable htmlFor="email">이메일</S.InputLable>
+            <S.InputLable htmlFor="login_id">이메일</S.InputLable>
             <S.FormInput
-              id="email"
+              id="login_id"
               type="email"
-              {...register("email", {
+              {...register("login_id", {
                 required: "이메일은 필수 입력입니다.",
                 pattern: {
                   value: /\S+@\S+\.\S+/,
@@ -39,8 +39,8 @@ const Signup = () => {
                 },
               })}
             />
-            {errors.email ? (
-              <S.Error className="error">{errors.email?.message}</S.Error>
+            {errors.login_id ? (
+              <S.Error className="error">{errors.login_id?.message}</S.Error>
             ) : null}
           </S.InputContainer>
           <S.InputContainer>

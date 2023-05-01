@@ -8,22 +8,22 @@ const Signin = () => {
     <S.Container>
       <S.SignupFormContainer>
         <S.Form
-          onSubmit={handleSubmit(({ email, password }) =>
-            submitSignin({ email, password })
+          onSubmit={handleSubmit(({ login_id, password }) =>
+            submitSignin({ login_id, password })
           )}
         >
           <S.Title>로그인</S.Title>
           <S.InputContainer>
             <S.InputLable htmlFor="email">이메일</S.InputLable>
             <S.FormInput
-              id="email"
+              id="login_id"
               type="email"
-              {...register("email", {
+              {...register("login_id", {
                 required: "이메일은 필수 입력입니다.",
               })}
             />
-            {errors.email ? (
-              <S.Error className="error">{errors.email?.message}</S.Error>
+            {errors.login_id ? (
+              <S.Error className="error">{errors.login_id?.message}</S.Error>
             ) : null}
           </S.InputContainer>
           <S.InputContainer>
