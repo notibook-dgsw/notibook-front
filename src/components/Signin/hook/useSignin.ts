@@ -20,8 +20,9 @@ const useSignin = () => {
     postSigninMutaition.mutate(
       { login_id, password },
       {
-        onSuccess: ({ token }) => {
-          LocalStorage.set(ACCESS_TOKEN_KEY, token);
+        onSuccess: ({ access_token }) => {
+          console.log(access_token);
+          LocalStorage.set(ACCESS_TOKEN_KEY, access_token);
           navigate("/");
         },
         onError: (error: any) => {

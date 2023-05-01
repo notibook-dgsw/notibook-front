@@ -1,14 +1,21 @@
+import { ComponentType, useEffect } from "react";
 import { ACCESS_TOKEN_KEY } from "../../constant/token/token.constant";
+import { useNavigate } from "react-router-dom";
 import LocalStorage from "../../libs/storage/LocalStorage";
 
-const withAuth = (AuthComponent: () => JSX.Element) => {
-  if (LocalStorage.get(ACCESS_TOKEN_KEY) === null) {
-    window.alert("토큰이 존재하지 않습니다.");
-    window.location.href = "/signin";
-    return <></>;
-  }
+const WithAuth = (SpecialComponent: ComponentType) => {
+  const AuthenticateCheck = () => {
+    const token = LocalStorage.get(ACCESS_TOKEN_KEY);
 
-  return <AuthComponent />;
+    if (!token) {
+      window.alert("로그인 페이지로 이동합니다.");
+      window.location.href = "/signin";
+    }
+
+    return <SpecialComponent />;
+  };
+
+  return AuthenticateCheck;
 };
 
-export default withAuth;
+export default WithAuth;

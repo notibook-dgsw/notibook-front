@@ -1,5 +1,5 @@
 import { postSigninType, postSignupType } from "../../types/auth/auth.type";
-import { customAxios } from "../../libs/axios/customAxios";
+import customAxios from "../../libs/axios/customAxios";
 class AuthApi {
   public async postSignup({ login_id, name, password }: postSignupType) {
     await customAxios.post("/auth/sign-up", {

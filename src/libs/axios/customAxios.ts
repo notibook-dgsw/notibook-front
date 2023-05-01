@@ -7,13 +7,15 @@ import {
 
 import LocalStorage from "../storage/LocalStorage";
 
-export const customAxios = axios.create({
+const customAxios = axios.create({
   baseURL: config.SERVER,
 });
 
 customAxios.interceptors.request.use(async (config: any) => {
-  config.header = {
+  config.headers = {
     [REQUEST_TOKEN_KEY]: `Bearer ${LocalStorage.get(ACCESS_TOKEN_KEY)}`,
   };
   return config;
 });
+
+export default customAxios;
