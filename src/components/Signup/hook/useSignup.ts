@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { postSignupType } from "../../../types/auth/signup.type";
+import { postSignupType } from "../../../types/auth/auth.type";
 import { usePostSignupMutation } from "../../../quries/auth/auth.query";
 import { useNavigate } from "react-router-dom";
 import { AxiosError } from "axios";

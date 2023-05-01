@@ -75,6 +75,7 @@ export const SubmitBtn = styled.button`
   width: 325px;
   height: 35px;
   border: none;
+  cursor: pointer;
 `;
 
 export const NavContainer = styled.div``;
