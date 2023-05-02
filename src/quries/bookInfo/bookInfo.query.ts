@@ -3,7 +3,7 @@ import BookInfoApi from "../../api/bookInfo/BookInfoApi";
 import { getBookInfoType } from "../../types/bookInfo/bookInfo.type";
 
 export const useGetBookInfoQuery = ({ isbn }: getBookInfoType) => {
-  useQuery(
+  return useQuery(
     ["useGetBookInfoQuery", isbn],
     () => BookInfoApi.getBookInfo({ isbn }),
     {

@@ -21,7 +21,6 @@ const useSignin = () => {
       { login_id, password },
       {
         onSuccess: ({ access_token }) => {
-          console.log(access_token);
           LocalStorage.set(ACCESS_TOKEN_KEY, access_token);
           navigate("/");
         },
