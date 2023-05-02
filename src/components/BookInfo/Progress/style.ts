@@ -58,11 +58,44 @@ export const Pageinput = styled.input`
   padding: 0.375rem 0.75rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  width: 100px;
+  width: 200px;
 `;
 
 export const PageinputContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
+`;
+
+export const CloseBtn = styled.button`
+  color: #fff;
+  background-color: #6c757d;
+  margin: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+`;
+
+export const SaveBtn = styled.button`
+  color: #fff;
+  background-color: #bd5d38;
+  margin: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+`;
+
+export const BtnContainer = styled.div`
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const Error = styled.p`
+  color: red;
+  margin-top: 3px;
+  font-size: 0.5em;
 `;

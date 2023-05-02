@@ -9,13 +9,12 @@ const BookInfo = () => {
   const location = useLocation();
   const currentUrl = location.pathname;
   const isbn = currentUrl.substring(currentUrl.lastIndexOf("/") + 1);
-  const { data: bookInfodata } = useGetBookInfoQuery({ isbn });
-  console.log(bookInfodata);
+
   return (
     <B.BookInfoCotnainer>
       <Nav />
-      <BookDetail bookInfodata={bookInfodata} />
-      <Progress />
+      <BookDetail isbn={isbn} />
+      <Progress isbn={isbn} />
       <BookNote />
     </B.BookInfoCotnainer>
   );

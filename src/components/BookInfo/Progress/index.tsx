@@ -3,8 +3,10 @@ import useModal from "../../../hook/useModal";
 import Modal from "../../common/Modal";
 import * as P from "./style";
 import { BsBookmarkPlusFill } from "react-icons/bs";
-const Progress = () => {
-  const { isOpenModal, onOpenModal } = useModal();
+import useProgress from "./hook/useProgress";
+const Progress = ({ isbn }: { isbn: string }) => {
+  const { isOpenModal, onOpenModal, onCloseModal } = useModal();
+  const { register, handleSubmit, errors, submitSave } = useProgress();
 
   return (
     <>
@@ -20,10 +22,27 @@ const Progress = () => {
       </P.ProgressCotnainer>
       {isOpenModal && (
         <Modal title="진행도 업데이트">
-          <P.PageinputContainer>
-            <P.Pageinput type="number" placeholder="시작페이지" />
-            <P.Pageinput type="number" placeholder="마지막 페이지" />
-          </P.PageinputContainer>
+          <form
+            onSubmit={handleSubmit(({ page }) => submitSave({ isbn, page }))}
+          >
+            <P.PageinputContainer>
+              <P.Pageinput
+                id="page"
+                type="number"
+                placeholder="페이지"
+                {...register("page", {
+                  required: "페이지를 입력해 주세요.",
+                })}
+              />
+              {errors.page ? (
+                <P.Error className="error">{errors.page?.message}</P.Error>
+              ) : null}
+            </P.PageinputContainer>
+            <P.BtnContainer>
+              <P.CloseBtn onClick={onCloseModal}>닫기</P.CloseBtn>
+              <P.SaveBtn type="submit">저장</P.SaveBtn>
+            </P.BtnContainer>
+          </form>
         </Modal>
       )}
     </>

@@ -12,7 +12,9 @@ export type bookDetailResponse = {
   title: string;
 };
 
-export type bookHistory = {
-  created_at: string;
+export type postBookNoteType = { isbn: string; content: string; page: number };
+
+export type postBookHistoryType = {
   page: number;
+  isbn: string;
 };
