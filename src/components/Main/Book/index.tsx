@@ -1,13 +1,15 @@
+import * as B from "./style";
+
 const Book = ({ data }: any) => {
   return (
-    <>
-      <div>제목 : {data.title}</div>
-      <div>저자 :{data.author}</div>
-      <div>{data.started_at}시작 • </div>
-      <div>{data.progress}%</div>
-      <div>{data.current_page} / </div>
-      <div>{data.all_pages}</div>
-    </>
+    <B.Container>
+      <B.Title>{data.title}</B.Title>
+      <B.Started_at>{data.started_at} 시작 • </B.Started_at>
+      <B.Progress>진행도 {data.progress}%</B.Progress>
+      <B.Page>
+        {data.current_page} / {data.all_pages}
+      </B.Page>
+    </B.Container>
   );
 };
 

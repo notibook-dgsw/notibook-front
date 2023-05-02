@@ -26,6 +26,7 @@ export const Pimg = styled.img.attrs({
 export const Text = styled.li<{ path: boolean }>`
   margin-top: 20px;
   font-size: 20px;
+  font-weight: 800;
 
   color: ${({ path }) => (path ? "#ffffff" : "#dedede")};
   a {
@@ -49,13 +50,21 @@ export const Myinfo = styled.div`
 
 export const Name = styled.h1`
   padding-top: 35%;
-  font-size: 3.5rem;
+  font-size: 6rem;
   font-weight: bolder;
+  color: #343a40;
 `;
 
-export const Book = styled.div`
-  margin-top: 15px;
+export const Book = styled.span`
+  margin-top: 20px;
   font-size: 1.5rem;
+  color: #6c757d;
+`;
+
+export const Movement = styled.img.attrs({})`
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
 `;
 
 export const Line2 = styled.hr`
@@ -74,6 +83,7 @@ export const Reding = styled.div`
   padding-top: 35%;
   font-size: 3.5rem;
   font-weight: bolder;
+  color: #343a40;
 `;
 
 export const Bookmark = styled.div`
@@ -125,7 +135,7 @@ export const Button = styled.button`
   border: none;
   position: absolute;
   right: 0;
-  padding-right: 400px;
+  margin-right: 400px;
 `;
 
 export const BtnImg = styled.img.attrs({})`

@@ -9,17 +9,30 @@ import badge4 from "../../asserts/badge4.png";
 import badge5 from "../../asserts/badge5.png";
 import award from "../../asserts/award.png";
 import question from "../../asserts/question.png";
+import book from "../../asserts/book.png";
 import {
   useGetUserQuery,
   useGetRecomendBookQuery,
 } from "../../quries/user/user.query";
 import Book from "./Book";
 import { BookType, getBooksType } from "../../types/main/user.type";
+import BookRecome from "./Recommend";
+import { useState } from "react";
 
 const Main = () => {
+  const [isClick, setIsClick] = useState(false);
   const { path } = useParams();
   const { data: booksData } = useGetUserQuery();
-  const { data: recommendBooks } = useGetRecomendBookQuery();
+  const {
+    data: recommendBooks,
+    refetch,
+    isLoading,
+  } = useGetRecomendBookQuery();
+
+  const getRecomendBooks = () => {
+    setIsClick(true);
+    refetch();
+  };
 
   return (
     <M.Container>
@@ -42,7 +55,7 @@ const Main = () => {
             </M.Text>
             <M.Line />
             <M.Text path={path === "#logout"}>
-              <a href="/logout">로그아웃</a>
+              <a href="/signin">로그아웃</a>
             </M.Text>
           </ul>
         </div>
@@ -52,13 +65,18 @@ const Main = () => {
         <M.Book>
           양산시립도서관 · {booksData?.books.length}권을 독서하셨습니다.
         </M.Book>
+        <a href="/books/:id">
+          <M.Movement src={book} alt="bookid" />
+        </a>
       </M.Myinfo>
       <M.Line2 />
       <M.Main id="history">
         <M.Reding>독서일지</M.Reding>
         <M.Bookmark>
           {booksData?.books?.map((bookInfo) => {
-            return <Book data={bookInfo} />;
+            return (
+              <Book data={bookInfo} onclick="location.href='/books/:id'" />
+            );
           })}
         </M.Bookmark>
       </M.Main>
@@ -90,11 +108,19 @@ const Main = () => {
         </M.Badgeline>
         <M.Recom>
           <M.Title>책 추천</M.Title>
-          {recommendBooks?.map((bookTitle) => bookTitle)}
-          <M.Button type="button">
+          {/* {recommendBooks?.books?.map((bookTitle) => bookTitle)} */}
+          <M.Button type="button" onClick={getRecomendBooks}>
             <M.BtnImg src={question} alt="chatgpt" />
           </M.Button>
         </M.Recom>
+
+        {!isClick ? null : isLoading ? (
+          <h1>불러오고 있습니다...</h1>
+        ) : (
+          recommendBooks?.books?.map((bookTitle) => {
+            return <BookRecome data={bookTitle} />;
+          })
+        )}
       </M.Main>
     </M.Container>
   );

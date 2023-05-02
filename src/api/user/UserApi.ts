@@ -8,7 +8,7 @@ class UserApi {
     return data;
   }
 
-  public async getBookrecom(): Promise<string[]> {
+  public async getBookrecom(): Promise<{ books: string[] }> {
     const { data } = await customAxios.get(`/user/recommend`);
     return data;
   }
