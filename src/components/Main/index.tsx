@@ -36,28 +36,36 @@ const Main = () => {
 
   return (
     <M.Container>
-      <M.Nav>
-        <span>
-          <Link to="/">
-            <M.Pimg src={profile} alt="profileimage" />
-          </Link>
-        </span>
+      <input type="checkbox" id="nav" name="nav" />
+      <label htmlFor="nav" id="label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <M.Nav id="navbox">
         <div>
-          <ul>
-            <M.Text path={path === "#about"}>
-              <a href="#about">내 정보</a>
-            </M.Text>
-            <M.Text path={path === "#history"}>
-              <a href="#history">독서 일지</a>
-            </M.Text>
-            <M.Text path={path === "#awards"}>
-              <a href="#awards">업적</a>
-            </M.Text>
-            <M.Line />
-            <M.Text path={path === "#logout"}>
-              <a href="/signin">로그아웃</a>
-            </M.Text>
-          </ul>
+          <span>
+            <Link to="/">
+              <M.Pimg src={profile} alt="profileimage" />
+            </Link>
+          </span>
+          <div>
+            <ul>
+              <M.Text path={path === "#about"}>
+                <a href="#about">내 정보</a>
+              </M.Text>
+              <M.Text path={path === "#history"}>
+                <a href="#history">독서 일지</a>
+              </M.Text>
+              <M.Text path={path === "#awards"}>
+                <a href="#awards">업적</a>
+              </M.Text>
+              <M.Line />
+              <M.Text path={path === "#logout"}>
+                <a href="/signin">로그아웃</a>
+              </M.Text>
+            </ul>
+          </div>
         </div>
       </M.Nav>
       <M.Myinfo id="about">
@@ -85,21 +93,21 @@ const Main = () => {
         <M.Achieve>내 독서 업적</M.Achieve>
         <M.Title>독서 뱃지</M.Title>
         <M.Badgeline>
-          <li>
+          <div>
             <M.Badge src={badge1} alt="badge1" />
-          </li>
-          <li>
+          </div>
+          <div>
             <M.Badge src={badge2} alt="badge2" />
-          </li>
-          <li>
+          </div>
+          <div>
             <M.Badge src={badge3} alt="badge3" />
-          </li>
-          <li>
+          </div>
+          <div>
             <M.Badge src={badge4} alt="badge4" />
-          </li>
-          <li>
+          </div>
+          <div>
             <M.Badge src={badge5} alt="badge5" />
-          </li>
+          </div>
         </M.Badgeline>
         <M.Title>독서 순위</M.Title>
         <M.Badgeline>

@@ -6,11 +6,12 @@ import SigninPage from "./pages/SigninPage";
 import WithAuth from "./components/HOC/withAuth";
 
 const Router = () => {
-  const AuthCeckMainPage = WithAuth(MainPage);
+  // const AuthCeckMainPage = WithAuth(MainPage);
 
   return (
     <Routes>
-      <Route path="/" element={<AuthCeckMainPage />} />
+      {/* <Route path="/" element={<AuthCeckMainPage />} /> */}
+      <Route path="/" element={<MainPage />} />
       <Route path="/books/:id" element={<BookInfoPage />} />
       <Route path="/signin" element={<SigninPage />} />
       <Route path="/signup" element={<SignupPage />} />
