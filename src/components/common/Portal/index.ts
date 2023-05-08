@@ -1,11 +1,10 @@
 import ReactDom from "react-dom";
 import { PotalProps } from "./type";
 
-const Portal = ({ children, potalId }: PotalProps) => {
-  const el = document.getElementById(potalId) as HTMLElement;
+const Portal = ({ children }: { children: React.ReactNode }) => {
+  const el = document.getElementById("modal-root") as HTMLElement;
 
   return ReactDom.createPortal(children, el);
 };
 
 export default Portal;
-

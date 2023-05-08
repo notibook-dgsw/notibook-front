@@ -1,5 +1,4 @@
 import { Link, useParams } from "react-router-dom";
-import useUser from "./hook/useUser";
 import * as M from "./style";
 import profile from "../../asserts/profile.jpg";
 import badge1 from "../../asserts/badge1.png";
@@ -14,7 +13,6 @@ import {
   useGetRecomendBookQuery,
 } from "../../quries/user/user.query";
 import Book from "./Book";
-import { BookType, getBooksType } from "../../types/main/user.type";
 
 const Main = () => {
   const { path } = useParams();

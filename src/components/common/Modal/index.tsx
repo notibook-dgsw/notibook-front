@@ -3,6 +3,7 @@ import * as M from "./style";
 import useModal from "../../../hook/useModal";
 import { useSetRecoilState } from "recoil";
 import { isOpenModalAtom } from "../../../store/modalStore";
+import Portal from "../Portal";
 
 type PropsType = {
   children: ReactNode;
@@ -11,7 +12,7 @@ type PropsType = {
 const Modal = ({ children, title }: PropsType) => {
   const { onCloseModal } = useModal();
   return (
-    <>
+    <Portal>
       <M.Background onClick={onCloseModal}>
         <M.ModalContainer onClick={(e) => e.stopPropagation()}>
           <M.TitleContainer>
@@ -20,7 +21,7 @@ const Modal = ({ children, title }: PropsType) => {
           <M.ChildrenContainer>{children}</M.ChildrenContainer>
         </M.ModalContainer>
       </M.Background>
-    </>
+    </Portal>
   );
 };
 

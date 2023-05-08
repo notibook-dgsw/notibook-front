@@ -1,15 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-  font-size: 4rem;
-  color: #343a40;
-  margin-bottom: 15px;
-  font-weight: 900;
-  @media all and (max-width: 768px) {
-    font-size: 3rem;
-  }
-`;
-
 export const Detail = styled.p`
   font-size: 1.15rem;
   font-weight: 400;

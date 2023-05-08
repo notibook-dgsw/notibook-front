@@ -9,7 +9,6 @@ class BookInfoApi {
     isbn,
   }: getBookInfoType): Promise<bookDetailResponse> {
     const { data } = await customAxios.get(`/books/${isbn}`);
-    console.log("D", data);
     return data;
   }
 

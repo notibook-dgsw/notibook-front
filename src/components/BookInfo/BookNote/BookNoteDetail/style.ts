@@ -31,7 +31,7 @@ export const TitleBookMark = styled.div`
   width: 80%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 `;
 
 export const BookMark = styled.div`

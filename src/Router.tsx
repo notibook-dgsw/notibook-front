@@ -7,11 +7,11 @@ import WithAuth from "./components/HOC/withAuth";
 
 const Router = () => {
   const AuthCeckMainPage = WithAuth(MainPage);
-
+  const AuthCheckBookInfoPage = WithAuth(BookInfoPage);
   return (
     <Routes>
       <Route path="/" element={<AuthCeckMainPage />} />
-      <Route path="/books/:id" element={<BookInfoPage />} />
+      <Route path="/books/:id" element={<AuthCheckBookInfoPage />} />
       <Route path="/signin" element={<SigninPage />} />
       <Route path="/signup" element={<SignupPage />} />
     </Routes>

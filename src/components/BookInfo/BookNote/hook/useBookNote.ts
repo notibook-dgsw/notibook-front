@@ -1,29 +1,35 @@
 import { useForm } from "react-hook-form";
-import { postBookHistoryType } from "../../../../types/bookInfo/bookInfo.type";
+import {
+  deleteBookNoteType,
+  postBookHistoryType,
+  postBookNoteType,
+} from "../../../../types/bookInfo/bookInfo.type";
 import { usePostBookHistoryMutation } from "../../../../quries/bookInfo/bookHistory.query";
 import { AxiosError } from "axios";
-import { useSetRecoilState } from "recoil";
-import { isOpenModalAtom } from "../../../../store/modalStore";
 import { useQueryClient } from "@tanstack/react-query";
 import useModal from "../../../../hook/useModal";
+import {
+  useDeleteBookNoteMutation,
+  usePostBookNoteMutation,
+} from "../../../../quries/bookInfo/bookNote.query";
 
-const useProgress = () => {
+const useBookNote = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<postBookHistoryType>();
-  const { onCloseModal } = useModal();
-  const postBookHistoryMutaition = usePostBookHistoryMutation();
+  } = useForm<postBookNoteType>();
+  const { onCloseBookNoteModal } = useModal();
+  const postBookNoteMutation = usePostBookNoteMutation();
 
   const queryClient = useQueryClient();
 
-  const submitSave = ({ isbn, page }: postBookHistoryType) => {
-    postBookHistoryMutaition.mutate(
-      { isbn, page },
+  const submitBookNote = ({ isbn, content, page }: postBookNoteType) => {
+    postBookNoteMutation.mutate(
+      { isbn, content, page },
       {
         onSuccess: () => {
-          onCloseModal();
+          onCloseBookNoteModal();
           queryClient.invalidateQueries({ queryKey: ["useGetBookInfoQuery"] });
         },
         onError: (error: any) => {
@@ -35,7 +41,9 @@ const useProgress = () => {
     );
   };
 
-  return { register, handleSubmit, errors, submitSave };
+  
+
+  return { register, handleSubmit, errors, submitBookNote };
 };
 
-export default useProgress;
+export default useBookNote;

@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Title = styled.h1`
   font-size: 4rem;
   color: #343a40;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-weight: 900;
+
   @media all and (max-width: 768px) {
     font-size: 3rem;
   }
@@ -27,7 +28,7 @@ export const ProgressBar = styled.div`
   background-color: #3eb489;
   margin-left: 18.5px;
   width: 5px;
-  height: 30px;
+  height: 85%;
 `;
 
 export const ProgressCotnainer = styled.div`
@@ -98,4 +99,20 @@ export const Error = styled.p`
   color: red;
   margin-top: 3px;
   font-size: 0.5em;
+`;
+
+export const ProgressBarContainer = styled.div`
+  display: flex;
+  height: auto;
+`;
+
+export const ProgressListContainer = styled.div`
+  width: 150px;
+`;
+
+export const ProgressList = styled.p`
+  width: 150px;
+  height: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 `;
