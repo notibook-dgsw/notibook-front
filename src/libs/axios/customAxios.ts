@@ -18,4 +18,15 @@ customAxios.interceptors.request.use(async (config: any) => {
   return config;
 });
 
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 403) {
+      LocalStorage.remove(ACCESS_TOKEN_KEY);
+      window.location.href = "/signin";
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default customAxios;
