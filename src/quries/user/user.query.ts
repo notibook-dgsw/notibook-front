@@ -5,4 +5,4 @@ export const useGetUserQuery = () =>
   useQuery(["login_id/UserApi"], () => UserApi.getUser());
 
 export const useGetRecomendBookQuery = () =>
-  useQuery(["books/UserApi"], () => UserApi.getBookrecom());
+  useQuery(["books/UserApi"], () => UserApi.getBookrecom(), { enabled: false });
