@@ -148,6 +148,11 @@ export const Myinfo = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    height: auto;
+    padding-bottom: 100px;
+  }
 `;
 
 export const Name = styled.h1`
@@ -166,6 +171,10 @@ export const Book = styled.span`
   margin-top: 30px;
   font-size: 1.5rem;
   color: #6c757d;
+  word-wrap: break-word;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Line2 = styled.hr`
@@ -178,8 +187,16 @@ export const Main = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+
   @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 100%;
     font-size: 1.5rem;
+    height: auto;
+    padding-bottom: 100px;
   }
 `;
 
@@ -203,7 +220,7 @@ export const Achieve = styled.div`
   font-size: 3.5rem;
   font-weight: bold;
   @media screen and (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 `;
 

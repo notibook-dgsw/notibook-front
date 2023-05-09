@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 55%;
+  width: 100%;
   display: flex;
+
   color: #20d7a5;
   font-weight: 400px;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Title = styled.div`
