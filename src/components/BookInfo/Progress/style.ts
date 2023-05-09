@@ -28,7 +28,7 @@ export const ProgressBar = styled.div`
   background-color: #3eb489;
   margin-left: 18.5px;
   width: 5px;
-  height: 85%;
+  height: 15px;
 `;
 
 export const ProgressCotnainer = styled.div`
@@ -108,6 +108,8 @@ export const ProgressBarContainer = styled.div`
 
 export const ProgressListContainer = styled.div`
   width: 150px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 `;
 
 export const ProgressList = styled.p`

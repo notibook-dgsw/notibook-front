@@ -34,8 +34,17 @@ const BookNote = ({ bookInfodata }: any) => {
             )}
           >
             <B.PageinputContainer>
+            <B.Pageinput
+                id="page"
+                type="number"
+                placeholder="페이지"
+                {...register("page", {
+                  required: "페이지를 입력해 주세요.",
+                })}
+              />
               <B.TextArea
                 id="content"
+                placeholder="노트 할 내용"
                 {...register("content", {
                   required: "내용을 입력해 주세요.",
                 })}

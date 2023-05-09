@@ -53,13 +53,13 @@ const Main = () => {
           <div>
             <ul>
               <M.Text path={path === "#about"}>
-                <a href="#about">내 정보</a>
+                <a href="/#about">내 정보</a>
               </M.Text>
               <M.Text path={path === "#history"}>
-                <a href="#history">독서 일지</a>
+                <a href="/#history">독서 일지</a>
               </M.Text>
               <M.Text path={path === "#awards"}>
-                <a href="#awards">업적</a>
+                <a href="/#awards">업적</a>
               </M.Text>
               <M.Line />
               <M.Text
@@ -86,7 +86,7 @@ const Main = () => {
         <M.Bookmark>
           {booksData?.books?.map((bookInfo) => {
             return (
-              <Book data={bookInfo} onclick="location.href='/books/:id'" />
+              <Book data={bookInfo}/>
             );
           })}
         </M.Bookmark>
