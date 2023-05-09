@@ -17,6 +17,8 @@ import Book from "./Book";
 import { BookType, getBooksType } from "../../types/main/user.type";
 import BookRecome from "./Recommend";
 import { useState } from "react";
+import LocalStorage from "../../libs/storage/LocalStorage";
+import { ACCESS_TOKEN_KEY } from "../../constant/token/token.constant";
 
 const Main = () => {
   const [isClick, setIsClick] = useState(false);
@@ -60,8 +62,13 @@ const Main = () => {
                 <a href="#awards">업적</a>
               </M.Text>
               <M.Line />
-              <M.Text path={path === "#logout"}>
-                <a href="/signin">로그아웃</a>
+              <M.Text
+                path={path === "#logout"}
+                onClick={() => {
+                  LocalStorage.remove(ACCESS_TOKEN_KEY);
+                }}
+              >
+                로그아웃
               </M.Text>
             </ul>
           </div>
