@@ -72,9 +72,6 @@ const Main = () => {
         <M.Book>
           양산시립도서관 · {booksData?.books.length}권을 독서하셨습니다.
         </M.Book>
-        <a href="/books/:id">
-          <M.Movement src={book} alt="bookid" />
-        </a>
       </M.Myinfo>
       <M.Line2 />
       <M.Main id="history">
@@ -116,22 +113,22 @@ const Main = () => {
         <M.Recom>
           <M.Title>책 추천</M.Title>
           {/* {recommendBooks?.books?.map((bookTitle) => bookTitle)} */}
-          <M.Button type="button" onClick={getRecomendBooks}>
-            <M.BtnImg src={question} alt="chatgpt" />
-          </M.Button>
         </M.Recom>
-
-        {!isClick ? null : isLoading ? (
-          <h1>불러오고 있습니다...</h1>
-        ) : (
-          recommendBooks?.books?.map((bookTitle) => {
-            return <BookRecome data={bookTitle} />;
-          })
-        )}
+        <M.Button type="button" onClick={getRecomendBooks}>
+          <M.BtnImg src={question} alt="chatgpt" />
+        </M.Button>
+        <M.ChatRecom>
+          {!isClick ? null : isLoading ? (
+            <h1>불러오고 있습니다...</h1>
+          ) : (
+            recommendBooks?.books?.map((bookTitle) => {
+              return <BookRecome data={bookTitle} />;
+            })
+          )}
+        </M.ChatRecom>
       </M.Main>
     </M.Container>
   );
 };
 
 export default Main;
-  

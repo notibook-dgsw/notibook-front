@@ -10,6 +10,7 @@ export const Container = styled.div`
   #label {
     @media screen and (min-width: 1110px) {
       display: none;
+      height: 50vw;
     }
     z-index: 110;
     top: 3vw;
@@ -154,18 +155,17 @@ export const Name = styled.h1`
   font-size: 6rem;
   font-weight: bolder;
   color: #343a40;
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    white-space: pre-line;
+  }
 `;
 
 export const Book = styled.span`
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1.5rem;
   color: #6c757d;
-`;
-
-export const Movement = styled.img.attrs({})`
-  width: 40px;
-  height: 40px;
-  margin-top: 30px;
 `;
 
 export const Line2 = styled.hr`
@@ -178,6 +178,9 @@ export const Main = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Reding = styled.div`
@@ -185,6 +188,9 @@ export const Reding = styled.div`
   font-size: 3.5rem;
   font-weight: bolder;
   color: #343a40;
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const Bookmark = styled.div`
@@ -196,6 +202,9 @@ export const Achieve = styled.div`
   padding-top: 20%;
   font-size: 3.5rem;
   font-weight: bold;
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const Title = styled.div`
@@ -241,12 +250,26 @@ export const Button = styled.button`
   background-color: white;
   border-radius: 70px;
   border: none;
-  position: absolute;
-  right: 0;
-  margin-right: 400px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: 768px) {
+    padding-left: 50%;
+  }
 `;
 
 export const BtnImg = styled.img.attrs({})`
   width: 40px;
   height: 40px;
+  @media screen and (max-width: 768px) {
+    width: 8vw;
+    height: 8vw;
+  }
+`;
+
+export const ChatRecom = styled.div`
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
 `;

@@ -11,6 +11,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<AuthCeckMainPage />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/books/:id" element={<AuthCheckBookInfoPage />} />
       <Route path="/signin" element={<SigninPage />} />
       <Route path="/signup" element={<SignupPage />} />
