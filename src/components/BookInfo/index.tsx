@@ -1,4 +1,4 @@
-import { useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useGetBookInfoQuery } from "../../quries/bookInfo/bookInfo.query";
 import * as B from "./style";
 import Progress from "./Progress";
@@ -15,7 +15,10 @@ const BookInfo = () => {
 
   return (
     <B.BookInfoCotnainer>
-      <Nav />
+      {/* <Nav /> */}
+      <Link style={{ textDecoration: "none" }} to={"/"}>
+        홈으로 이동
+      </Link>
       {bookInfodata?.author === undefined ? (
         <p>로딩중</p>
       ) : (
