@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import useSignin from "./hook/useSignin";
 import * as S from "./style";
-import { useEffect } from "react";
 const Signin = () => {
   const { register, handleSubmit, errors, submitSignin } = useSignin();
 
-  useEffect(() => {
-    submitSignin({ login_id: "test@gmail.com", password: "12345678" });
-  }, []);
   return (
     <S.Container>
       <S.SignupFormContainer>
@@ -52,6 +48,17 @@ const Signin = () => {
         <S.NavContainer>
           <S.NavSentence>
             계정이 없으시다면? <Link to={"/signup"}>회원가입</Link>
+            <p
+              style={{ margin: "10px 0 0 15px" }}
+              onClick={() => {
+                submitSignin({
+                  login_id: "12345@gmail.com",
+                  password: "12345678",
+                });
+              }}
+            >
+              테스트 계정으로 로그인
+            </p>
           </S.NavSentence>
         </S.NavContainer>
       </S.SignupFormContainer>
