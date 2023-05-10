@@ -93,7 +93,7 @@ const Main = () => {
       </M.Main>
       <M.Line2 />
       <M.Main id="awards">
-        <M.Achieve>내 독서 업적</M.Achieve>
+        {/* <M.Achieve>내 독서 업적</M.Achieve>
         <M.Title>독서 뱃지</M.Title>
         <M.Badgeline>
           <div>
@@ -111,11 +111,11 @@ const Main = () => {
           <div>
             <M.Badge src={badge5} alt="badge5" />
           </div>
-        </M.Badgeline>
+        </M.Badgeline> */}
         <M.Title>독서 순위</M.Title>
         <M.Badgeline>
           <M.Award src={award} alt="상" />
-          <M.Content>2023년도 양산시립도서관 이용자 중 독서량 38위</M.Content>
+          <M.Content>2023년도 독서량 38위</M.Content>
         </M.Badgeline>
         <M.Recom>
           <M.Title>책 추천</M.Title>

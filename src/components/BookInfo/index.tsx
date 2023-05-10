@@ -16,9 +16,15 @@ const BookInfo = () => {
   return (
     <B.BookInfoCotnainer>
       <Nav />
-      <BookDetail bookInfodata={bookInfodata} />
-      <Progress bookInfodata={bookInfodata} />
-      <BookNote bookInfodata={bookInfodata} />
+      {bookInfodata?.author === undefined ? (
+        <p>로딩중</p>
+      ) : (
+        <>
+          <BookDetail bookInfodata={bookInfodata} />
+          <Progress bookInfodata={bookInfodata} />
+          <BookNote bookInfodata={bookInfodata} />
+        </>
+      )}
     </B.BookInfoCotnainer>
   );
 };
