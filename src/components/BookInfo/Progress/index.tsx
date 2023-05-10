@@ -27,8 +27,15 @@ const Progress = ({ bookInfodata }: any) => {
         </P.TitleBookMark>
         <P.ProgressBarContainer>
           <div>
-            <P.ProgressStart />
-            <P.ProgressBar />
+            {bookInfodata?.history.map((item: any) => {
+              console.log("1", item);
+              return (
+                <div>
+                  <P.ProgressStart />
+                  <P.ProgressBar />
+                </div>
+              );
+            })}
           </div>
           <div>
             {bookInfodata?.history.map((item: any) => {

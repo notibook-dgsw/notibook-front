@@ -2,7 +2,7 @@ import * as B from "./style";
 
 const Book = ({ data }: any) => {
   return (
-    <B.Container>
+    <B.Container onClick={() => (window.location.href = `/books/${data.isbn}`)}>
       <div style={{ display: "flex" }}>
         <B.Title>{data.title}</B.Title>
         <B.Started_at>{data.started_at} ~ </B.Started_at>

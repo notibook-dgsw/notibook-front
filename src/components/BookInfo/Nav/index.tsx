@@ -9,13 +9,13 @@ const Nav = () => {
       <div>
         <ul>
           <N.Text path={path === "#about"}>
-            <Link to="#about">내 정보</Link>
+            <Link to="/#about">내 정보</Link>
           </N.Text>
           <N.Text path={path === "#history"}>
-            <Link to="#history">독서 일지</Link>
+            <Link to="/#history">독서 일지</Link>
           </N.Text>
           <N.Text path={path === "#awards"}>
-            <Link to="#awards">업적</Link>
+            <Link to="/#awards">업적</Link>
           </N.Text>
           <N.Line />
           <N.Text path={path === "#logout"}>
