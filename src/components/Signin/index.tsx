@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import useSignin from "./hook/useSignin";
 import * as S from "./style";
+import { useEffect } from "react";
 const Signin = () => {
   const { register, handleSubmit, errors, submitSignin } = useSignin();
 
+  useEffect(() => {
+    submitSignin({ login_id: "test@gmail.com", password: "12345678" });
+  }, []);
   return (
     <S.Container>
       <S.SignupFormContainer>

@@ -85,9 +85,7 @@ const Main = () => {
         <M.Reding>독서일지</M.Reding>
         <M.Bookmark>
           {booksData?.books?.map((bookInfo) => {
-            return (
-              <Book data={bookInfo}/>
-            );
+            return <Book data={bookInfo} />;
           })}
         </M.Bookmark>
       </M.Main>
