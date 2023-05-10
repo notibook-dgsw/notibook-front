@@ -85,9 +85,7 @@ const Main = () => {
         <M.Reding>독서일지</M.Reding>
         <M.Bookmark>
           {booksData?.books?.map((bookInfo) => {
-            return (
-              <Book data={bookInfo}/>
-            );
+            return <Book data={bookInfo} />;
           })}
         </M.Bookmark>
       </M.Main>
@@ -115,7 +113,7 @@ const Main = () => {
         <M.Title>독서 순위</M.Title>
         <M.Badgeline>
           <M.Award src={award} alt="상" />
-          <M.Content>2023년도 독서량 38위</M.Content>
+          {/* <M.Content>2023년도 독서량 38위</M.Content> */}
         </M.Badgeline>
         <M.Recom>
           <M.Title>책 추천</M.Title>
