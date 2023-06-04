@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import useSignup from "./hook/useSignup";
 import * as S from "./style";
+import PrivacyText from "./Privacy";
+import { useState } from "react";
 const Signup = () => {
   const { register, handleSubmit, errors, submitSignup } = useSignup();
+  const [ isAllowed, setIsAllowed ] = useState(false)
 
   return (
     <S.Container>
@@ -61,10 +64,15 @@ const Signup = () => {
             ) : null}
           </S.InputContainer>
           <S.AllowSentence>
-            회원가입을 진행함으로서 로운앤퓨처컴퍼니의 개인정보 취급 약관에
-            동의합니다.
+            회원가입을 진행함으로서 Notibook 서비스의 개인정보수집이용동의서에 동의하는 것으로 간주합니다. 동의하시면 회원가입 버튼이 활성화됩니다.
           </S.AllowSentence>
-          <S.SubmitBtn type="submit">회원가입</S.SubmitBtn>
+          <textarea style={{ height: '100px', overflowY:'scroll' }} readOnly>{PrivacyText}</textarea>
+          <div style={{ marginBottom: '15px' }}>
+          <input type="checkbox" onChange={(ev) => {
+            setIsAllowed(ev.target.checked)
+          }}></input> 개인정보수집이용동의서에 동의합니다
+          </div>
+          <S.SubmitBtn type="submit" disabled={!isAllowed} style={{ backgroundColor: isAllowed ? undefined : 'gray' }}>회원가입</S.SubmitBtn>
         </S.Form>
         <S.NavContainer>
           <S.NavSentence>
@@ -73,7 +81,7 @@ const Signup = () => {
         </S.NavContainer>
       </S.SignupFormContainer>
       <S.Footer>
-        Copyright © 2023 — 로운앤퓨처컴퍼니 & 양산시립중앙도서관
+        Notibook - 대구소프트웨어마이스터고등학교 & 문산수억고등학교
       </S.Footer>
     </S.Container>
   );

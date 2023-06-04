@@ -11,7 +11,7 @@ export const SignupFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 450px;
-  height: 500px;
+  height: 670px;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);

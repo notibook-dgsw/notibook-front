@@ -39,10 +39,6 @@ const Signin = () => {
               <S.Error className="error">{errors.password?.message}</S.Error>
             ) : null}
           </S.InputContainer>
-          <S.AllowSentence>
-            * 노티북 서비스는 양산시립도서관 계정과 연동되지 않습니다. 별도의
-            회원가입을 진행해주세요.
-          </S.AllowSentence>
           <S.SubmitBtn type="submit">로그인</S.SubmitBtn>
         </S.Form>
         <S.NavContainer>
@@ -52,7 +48,7 @@ const Signin = () => {
         </S.NavContainer>
       </S.SignupFormContainer>
       <S.Footer>
-        Copyright © 2023 — 로운앤퓨처컴퍼니 & 양산시립중앙도서관
+        Notibook - 대구소프트웨어마이스터고등학교 & 문산수억고등학교
       </S.Footer>
     </S.Container>
   );
