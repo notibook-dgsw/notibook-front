@@ -226,13 +226,17 @@ export const Achieve = styled.div`
 
 export const Title = styled.div`
   margin-top: 40px;
-  color: gray;
-  font-size: 1.5rem;
+  /* color: gray; */
+  font-weight: 700;
+  color: rgb(52, 58, 64);
+  font-size: 2.5rem;
 `;
 
 export const Badgeline = styled.ul`
   width: 100%;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  align-items: center;
   div {
     display: inline-block;
   }
@@ -257,6 +261,7 @@ export const Award = styled.img.attrs({})`
 `;
 
 export const Content = styled.div`
+  color: gray;
   margin-top: 20px;
   font-size: 20px;
 `;
