@@ -44,17 +44,6 @@ const Signin = () => {
         <S.NavContainer>
           <S.NavSentence>
             계정이 없으시다면? <Link to={"/signup"}>회원가입</Link>
-            <p
-              style={{ margin: "10px 0 0 15px" }}
-              onClick={() => {
-                submitSignin({
-                  login_id: "12345@gmail.com",
-                  password: "12345678",
-                });
-              }}
-            >
-              테스트 계정으로 로그인
-            </p>
           </S.NavSentence>
         </S.NavContainer>
       </S.SignupFormContainer>
