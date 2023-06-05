@@ -77,7 +77,7 @@ const Main = () => {
       <M.Myinfo id="about">
         <M.Name>{booksData?.name}</M.Name>
         <M.Book>
-          양산시립도서관 · {booksData?.books.length}권을 독서하셨습니다.
+          문산수억고등학교 · {booksData?.books.length}권을 독서하셨습니다.
         </M.Book>
       </M.Myinfo>
       <M.Line2 />
